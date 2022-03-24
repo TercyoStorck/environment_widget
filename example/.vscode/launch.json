@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "Development",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/environments/development.dart",
+                "--verbose"
+            ]
+        },
+        {
+            "name": "Homologation",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/environments/homologation.dart",
+                "--verbose"
+            ]
+        },
+        {
+            "name": "Production",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-t",
+                "lib/environments/production.dart",
+            ]
+        }
+    ]
+}

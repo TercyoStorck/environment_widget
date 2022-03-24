@@ -1,7 +1,7 @@
 name: environment_widget
-description: A new Flutter package project.
+description: Flutter package to set environment.
 version: 1.0.0
-homepage:
+homepage: https://github.com/TercyoStorck/environment_widget
 environment:
   sdk: ">=2.16.1 <3.0.0"
   flutter: ">=1.17.0"

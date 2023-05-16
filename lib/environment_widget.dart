@@ -20,6 +20,8 @@ class Environment {
         _bannerLocation = bannerLocation,
         _isRelease = isRelease;
 
+  bool get isReleaseMode => _isRelease;
+
   Widget widget({
     required Widget appWidget,
   }) {

@@ -24,6 +24,8 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return this.environment.widget(
           appWidget: MaterialApp(
+            theme: this.environment.lightThemeData,
+            darkTheme: this.environment.darkThemeData,
             debugShowCheckedModeBanner: false,
             home: Home(
               baseURL: this.environment.baseUrl,

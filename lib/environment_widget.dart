@@ -4,37 +4,38 @@ import 'package:flutter/material.dart';
 
 class Environment {
   final Color _bannerColor;
-  final String _bannerTag;
-  final BannerLocation _bannerLocation;
+  final String? _bannerTag;
+  final BannerLocation? _bannerLocation;
   final String? baseUrl;
-  final bool _isRelease;
+  final ThemeData? lightThemeData;
+  final ThemeData? darkThemeData;
 
   Environment({
     Color bannerColor = Colors.lightBlue,
-    String bannerTag = '',
-    BannerLocation bannerLocation = BannerLocation.topEnd,
+    String? bannerTag,
+    BannerLocation? bannerLocation,
     this.baseUrl,
-    bool isRelease = false,
+    this.lightThemeData,
+    this.darkThemeData,
   })  : _bannerColor = bannerColor,
         _bannerTag = bannerTag,
-        _bannerLocation = bannerLocation,
-        _isRelease = isRelease;
+        _bannerLocation = bannerLocation;
 
-  bool get isReleaseMode => _isRelease;
+  bool get isReleaseMode => _bannerLocation == null && _bannerTag == null;
 
   Widget widget({
     required Widget appWidget,
   }) {
-    if (_isRelease) {
+    if (this.isReleaseMode) {
       return appWidget;
     }
 
     return Directionality(
       textDirection: TextDirection.ltr,
       child: Banner(
-        location: _bannerLocation,
+        location: _bannerLocation ?? BannerLocation.topEnd,
         color: _bannerColor,
-        message: _bannerTag,
+        message: _bannerTag ?? '',
         textStyle: const TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.bold,

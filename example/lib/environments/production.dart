@@ -6,7 +6,6 @@ import '../main.dart' as application;
 void main() async {
   final applicationWidget = await application.run(
     environment: Environment(
-      isRelease: true,
       baseUrl: 'https://foo.bar',
     ),
   );

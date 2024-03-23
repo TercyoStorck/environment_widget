@@ -23,8 +23,9 @@ Environment(
 ```
 ``` dart
 Environment(
-    isRelease: true,
     baseUrl: 'https://foo.bar',
+    lightThemeData: ThemeData(),
+    darkThemeData: ThemeData(),
 )
 ```
 

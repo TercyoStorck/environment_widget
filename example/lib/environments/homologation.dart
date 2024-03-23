@@ -10,6 +10,8 @@ void main() async {
       bannerTag: 'Hmg',
       baseUrl: 'https://hmg.foo.bar',
       bannerLocation: BannerLocation.bottomEnd,
+      lightThemeData: ThemeData(),
+      darkThemeData: ThemeData(),
     ),
   );
 

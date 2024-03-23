@@ -5,29 +5,27 @@
             "request": "launch",
             "type": "dart",
             "args": [
-                "-t",
-                "lib/environments/development.dart",
                 "--verbose"
-            ]
+            ],
+            "flutterMode": "debug",
+            "program": "${workspaceFolder}/lib/environments/development.dart"
         },
         {
             "name": "Homologation",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "-t",
-                "lib/environments/homologation.dart",
-                "--verbose"
-            ]
+            "flutterMode": "release",
+            "program": "${workspaceFolder}/lib/environments/homologation.dart"
         },
         {
             "name": "Production",
             "request": "launch",
             "type": "dart",
-            "args": [
-                "-t",
-                "lib/environments/production.dart",
-            ]
+            "flutterMode": "release",
+            "program": "${workspaceFolder}/lib/environments/production.dart"
         }
     ]
 }
+//flutter build apk -t lib/infrastructure/environment/main_homologation.dart --release
+//flutter build appbundle -t lib/infrastructure/environment/main_production.dart --release
+//flutter build ipa -t lib/infrastructure/environment/main_production.dart && xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive -exportOptionsPlist ios/ExportOptions.plist -exportPath ../ios/build/Runner.ipa -allowProvisioningUpdates
